@@ -1,2 +1,18 @@
 # bigs
-new items to strong
+> new items to strong!
+
+## 练习一下ajax和DOM渲染的一些操作!
+
+#### 注册
+
+#### 登录
+
+#### 发布
+
+#### 筛选
+
+#### 添加
+
+#### 删除
+
+#### 文件上传等
