@@ -38,7 +38,7 @@
             </div>
             <!-- 第二行的按钮区域 -->
             <div class="row2">
-                <!-- 文件选择控件 -->
+                <!-- 文件选择控件 需要,但是我们一般不让它显示,样式比较丑,只要触发他的事件就可以了 -->
                 <input type="file" id="file" accept="image/png,image/jpeg" />
 
                 <button type="button" class="layui-btn" id="btnChooseImage">上传</button>
@@ -48,8 +48,11 @@
     </div>
     <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 图片裁剪 -->
+    <script src="/assets/lib/jquery.js"></script>
     <script src="/assets/lib/cropper/Cropper.js"></script>
     <script src="/assets/lib/cropper/jquery-cropper.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+    <script src="/assets/js/user_avatar.js"></script>
 
 </body>
 

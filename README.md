@@ -46,6 +46,48 @@ $.ajaxPrefilter(function (options) {
 2. 退出要remove掉本地的token
 3. 返回到登录页面
 
+#### 用户信息的修改
+
+1. 展示用户信息
+
+2. *form.val('filter', object);* layui 提供的快速填充表单信息,利用name属性和object属性一致性
+
+3. <input type="hiddeng">let web developers include data that cannot be seen or modified by users when a form is submitted,利用这个隐藏域储存一些我们不想显示,但是又需要的数据
+
+4. 在ifram里面调用父级页面的全局方法,在ifram里面window指向自己的窗口
+
+   jQuery入口函数里面的函数式属于jQuery对象的,在入口函数外的才是全局的,可以用window调用到
+
+   1. ```
+      window.parent.getUserInfo();
+      ```
+
+      
+
+#### 使用Cooper.css插件裁剪更换用户头像
+
+
+
+#### `base64`格式的图片
+
+`base64`格式你会发现是一段字符串，其实`base64`格式的图片，就是利用一段字符串来描述这张图片
+
+**好处：**能够避免一些额外的图片请求
+
+**缺点：**体积会比原来图片要大 30% 左右
+
+**使用场景：**不适用大图片，一些小图片比较适合使用（图片上传时的本地预览功能）
+
+```
+URL.createObjectURL()	//	使用这个方法可以将文件转化为base64
+```
+
+
+
+
+
+
+
 #### 发布
 
 #### 筛选

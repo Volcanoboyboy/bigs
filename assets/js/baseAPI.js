@@ -1,3 +1,7 @@
+/**
+ * 接口文档地址: https://www.showdoc.com.cn/escook?page_id=3707158761215217
+ */
+
 //  利用ajaxPrefilter()对ajax进行预设
 $.ajaxPrefilter(function (options) {
     //  统一设置基准请求
@@ -10,7 +14,7 @@ $.ajaxPrefilter(function (options) {
         }
     }
     options.complete = function(res) {
-        console.log(res);
+        // console.log(res);
         //responseJSON: {status: 1, message: "身份认证失败！"}
         if(res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！"){
             localStorage.removeItem("token");

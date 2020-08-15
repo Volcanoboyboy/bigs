@@ -18,6 +18,7 @@
         <div class="layui-card-body">
             <!-- form 表单区域 -->
             <form class="layui-form" action="" lay-filter="formUserInfo">
+                <!-- 隐藏域用于隐式储存用户id属性 -->
                 <input type="hidden" name="id" value="" />
                 <div class="layui-form-item">
                     <label class="layui-form-label">登录名称</label>
@@ -47,6 +48,9 @@
         </div>
     </div>
     <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+    <script src="/assets/js/userInfo.js"></script>
 
 </body>
 

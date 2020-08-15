@@ -32,7 +32,7 @@ $(function () {
             data: data,
             success(res) {
                 if (res.status !== 1) return layer.msg(res.message,{icon: 5})
-                layer.msg("注册成功", {icon: 1})
+                layer.msg("注册成功", {icon: 6})
                 $("#link_login").click();
             }
         })
@@ -67,7 +67,7 @@ $(function () {
                 }
                 //  保存token
                 localStorage.setItem("token", res.token);
-                layer.msg("登录成功");
+                layer.msg("登录成功",{icon: 6});
                 location.href = "/index.html";
             }
         })
