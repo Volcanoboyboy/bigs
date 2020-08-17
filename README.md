@@ -36,7 +36,7 @@ $.ajaxPrefilter(function (options) {
 
 无论ajax失败或者成功都会执行这个回调函数,
 
-可以利用这个函数让没有token的用户强制跳会登录
+可以利用这个函数让没有token的用户强制跳回登录
 
 
 
@@ -84,11 +84,52 @@ URL.createObjectURL()	//	使用这个方法可以将文件转化为base64
 
 
 
-
-
-
-
 #### 发布
+
+1. 初始化富文本区域,利用tinymce插件
+
+2. 初始化图片裁剪器,
+
+   ```
+       // 1. 初始化图片裁剪器
+       var $image = $('#image')
+   
+       // 2. 裁剪选项
+       var options = {
+           aspectRatio: 400 / 400,
+           preview: '.img-preview'
+       }
+       // 3. 初始化裁剪区域
+       $image.cropper(options)
+   ```
+
+   如果有新添加的的图片要重新销毁原区域,然后重新初始化图片剪裁器(cropper)
+
+   ```
+   $image
+       .cropper('destroy') // 销毁旧的裁剪区域
+       .attr('src', newImageURL) // 重新设置图片路径
+       .cropper(options) // 重新初始化裁剪区域
+   ```
+
+3. 文件上传的时候注意接口文档的参数要球,例如图片需要blob格式等
+
+4. 注意利用FormData做ajax的时候需要配置如下两个参数
+
+   ```
+   contentType: false,	//	不需要再设置请求头格式
+   processData: false,	//	参数不需要二次编码了
+   ```
+
+   
+
+
+
+
+
+
+
+
 
 #### 筛选
 
