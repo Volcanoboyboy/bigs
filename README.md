@@ -121,7 +121,6 @@ URL.createObjectURL()	//	使用这个方法可以将文件转化为base64
    processData: false,	//	参数不需要二次编码了
    ```
 
-   
 
 
 
@@ -133,7 +132,21 @@ URL.createObjectURL()	//	使用这个方法可以将文件转化为base64
 
 #### 筛选
 
+渲染下拉列表的时候,在layui的环境下,动态渲染的同时还需要手动调用一下layui的渲染函数
+
+```
+layui.form.render();不指定参数的情况下是重新渲染全部表单
+```
+
+
+
 #### 添加
+
+#### 编辑
+
+
+
+
 
 #### 删除
 

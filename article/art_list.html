@@ -18,12 +18,7 @@
             <!-- 筛选区域 -->
             <form class="layui-form" id="form-search">
                 <div class="layui-form-item layui-inline">
-                    <select name="cate_id">
-                        <option value="">所有分类</option>
-                        <option value="">科技</option>
-                        <option value="">生活</option>
-
-                    </select>
+                    <select name="cate_id"></select>
                 </div>
                 <div class="layui-form-item layui-inline">
                     <select name="state">
@@ -57,8 +52,11 @@
                 <tbody>
                 </tbody>
             </table>
+            <div id="fenye"></div>
         </div>
     </div>
+
+    <!-- 文章列表模版 -->
     <script type="text/html" id="temp_list">
         {{each data}}
         <tr>
@@ -67,13 +65,21 @@
             <td>{{$value.pub_date | formDate}}</td>
             <td>{{$value.state}}</td>
             <td>
-                <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                <button type="button" class="layui-btn layui-btn-xs btn-edite" data-id="{{$value.Id}}">编辑</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id="{{$value.Id}}">删除</button>
             </td>
         </tr>
         {{/each}}
-</script>
-    
+    </script>
+
+    <!-- 筛选分类模版 -->
+    <script type="text/html" id="temp_cate">
+        <option value="">所有分类</option>
+        {{each data}}
+        <option value="{{$value.Id}}">{{$value.name}}</option>
+        {{/each}}
+    </script>
+
     <!-- 导入第三方的 JS 插件 -->
     <script src="/assets/lib/layui/layui.all.js"></script>
     <script src="/assets/lib/template-web.js"></script>
